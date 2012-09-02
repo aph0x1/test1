@@ -2,7 +2,7 @@ function displayUI()
 {
 	$("#plugbot-warning").remove();
 	$('#playback').append('<div id="plugbot-warning" style="background-color:#0a0a0a;opacity:0.91;width:100%;padding:12px 0 12px 0;color:#fff;text-align:center;opacity:0;font-size:15px">'
-		+ 'BomberBOT\' activado<br />');
+		+ 'BomberBOT activado<br />');
 
 }
 displayUI();
