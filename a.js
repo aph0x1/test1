@@ -193,16 +193,6 @@ function f_ron(data){
                         API.sendChat(data.from + ", Se ha tomado un vaso de Ron, Yoho! Yoho! que corra el ron!!!");
 }
 
-function f_todo(data){
-                       
-                       API.sendChat(data.from + ", ¿ Realmente quieres hacer una bomba de tiempo y detonarla en tu estómago ? ok ahi te va!!!");
-                       window.setTimeout(function(){API.sendChat('3..');}, 3000);
-                       window.setTimeout(function(){API.sendChat('2..');}, 3000);
-                       window.setTimeout(function(){API.sendChat('1..');}, 3000);
-                       window.setTimeout(function(){API.sendChat('BOOOM! ahora abran paso... dejenlo ir al baño');}, 1000);
-
-}
-
 var o_chatcmds = {
         '/comandos': {
                 f: f_comandos,
@@ -274,10 +264,6 @@ var o_chatcmds = {
         },
         '/ron': {
                 f: f_ron,
-                needsPerm: false
-        },
-         '/todo': {
-                f: f_todo,
                 needsPerm: false
         },
 };
