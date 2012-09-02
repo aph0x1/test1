@@ -1,11 +1,28 @@
 function displayUI()
 {
-        $("#plugbot-warning").remove();
+	$("#plugbot-warning").remove();
 	$('#playback').append('<div id="plugbot-warning" style="background-color:#0a0a0a;opacity:0.91;width:100%;padding:12px 0 12px 0;color:#fff;text-align:center;opacity:0;font-size:15px">'
 		+ 'We all like privacy, right?  Well, there\'s something you should know<br />about Plug.bot in case you are concerned.' 
 		+ '<br />Read up if you care, though it isn\'t super important)<br /> via the Privacy Notice section of the README!</div>');
 
-displayUI();
+	/*
+	 * Be sure to remove any old instance of the UI, in case the user
+	 * reloads the script without refreshing the page (updating.)
+	 */
+	$('#plugbot-ui').remove();
+
+	/*
+	 * Generate the HTML code for the UI.
+	 */
+	$('#chat').prepend('<div id="plugbot-ui"></div>');
+	$('#plugbot-ui').append(
+			'<p id="plugbot-btn-woot" style="color:#3FFF00">auto-woot</p>'
+		+ 	'<p id="plugbot-btn-queue" style="color:#ED1C24">auto-queue</p>'
+		+ 	'<p id="plugbot-btn-hidevideo" style="color:#ED1C24">hide video</p>'
+		+ 	'<p id="plugbot-btn-userlist" style="color:#3FFF00">userlist</p>'
+		+ 	'<h2 title="This makes it so you can give a user in the room a special colour when they chat!">Custom Username FX: <br /><br id="space" /><span onclick="promptCustomUsername()" style="cursor:pointer">+ add new</span></h2>'
+	);
+}
 
 
 function f_comandos(data) {
