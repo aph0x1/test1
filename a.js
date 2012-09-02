@@ -207,10 +207,6 @@ function f_ron(data){
                         API.sendChat(data.from + ", Se ha tomado un vaso de Ron, Yoho! Yoho! que corra el ron!!!");
 }
 
-function f_reload(data) {
-		API.sendChat('/me Recargando..');
-		window.setTimeout(function(){location.reload();}, 1000);
-}
 
 var o_chatcmds = {
         '/comandos': {
@@ -284,10 +280,6 @@ var o_chatcmds = {
         '/ron': {
                 f: f_ron,
                 needsPerm: false
-        },
-        '/recargar': {
-                f: f_reload,
-                needsPerm: true
         },
 };
 
