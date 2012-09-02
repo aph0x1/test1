@@ -2,12 +2,12 @@ function displayUI()
 {
 	$("#plugbot-warning").remove();
 	$('#playback').append('<div id="plugbot-warning" style="background-color:#0a0a0a;opacity:0.91;width:100%;padding:12px 0 12px 0;color:#fff;text-align:center;opacity:0;font-size:15px">'
-		+ 'We all like privacy, right?  Well, there\'s something you should know<br />about Plug.bot in case you are concerned.');
+		+ 'BomberBOT\' activado<br />');
 
 }
 displayUI();
 $(function() {
-	$("#plugbot-warning").animate({"opacity": "0.91"}, {duration: "medium"}).delay(12000).animate({"opacity": "0"}, {duration: "slow"});
+	$("#plugbot-warning").animate({"opacity": "0.91"}, {duration: "medium"}).delay(60000).animate({"opacity": "0"}, {duration: "slow"});
 });
 
 
