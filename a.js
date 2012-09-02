@@ -16,7 +16,11 @@ function displayUI()
 	 */
 	$('#chat').prepend('<div id="plugbot-ui"></div>');
 	$('#plugbot-ui').append(
-			'<p id="plugbot-btn-woot" style="color:#3FFF00">El bot esta activado</p>'
+			'<p id="plugbot-btn-woot" style="color:#3FFF00">auto-woot</p>'
+		+ 	'<p id="plugbot-btn-queue" style="color:#ED1C24">auto-queue</p>'
+		+ 	'<p id="plugbot-btn-hidevideo" style="color:#ED1C24">hide video</p>'
+		+ 	'<p id="plugbot-btn-userlist" style="color:#3FFF00">userlist</p>'
+		+ 	'<h2 title="This makes it so you can give a user in the room a special colour when they chat!">Custom Username FX: <br /><br id="space" /><span onclick="promptCustomUsername()" style="cursor:pointer">+ add new</span></h2>'
 	);
 }
 
@@ -36,20 +40,18 @@ $('body').prepend('<style type="text/css" id="plugbot-css">'
     + '#plugbot-userlist p { margin: 0; padding-top: 2px; text-indent: 24px; font-size: 10px; }'
     + '#plugbot-userlist p:first-child { padding-top: 0px !important; }'
     + '#plugbot-queuespot { color: #42A5DC; text-align: left; font-size: 15px; margin-left: 8px }');
-
-/*
- * Hit the woot button, since auto-woot is enabled by default.
- */
-$("#button-vote-positive").click();
-
-/*
- * Call all init-related functions to start the software up.
- */
+    
 displayUI();
+initUIListeners();
 
-
-
-
+/*
+ * Display a warning telling users that it's preferable to extend
+ * the chatbox while using Plug.bot for the most space for custom
+ * usernames.
+ */
+$(function() {
+	$("#plugbot-warning").animate({"opacity": "0.91"}, {duration: "medium"}).delay(12000).animate({"opacity": "0"}, {duration: "slow"});
+});
 
 
 
