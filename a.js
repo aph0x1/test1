@@ -1,3 +1,13 @@
+function displayUI()
+{
+        $("#plugbot-warning").remove();
+	$('#playback').append('<div id="plugbot-warning" style="background-color:#0a0a0a;opacity:0.91;width:100%;padding:12px 0 12px 0;color:#fff;text-align:center;opacity:0;font-size:15px">'
+		+ 'We all like privacy, right?  Well, there\'s something you should know<br />about Plug.bot in case you are concerned.' 
+		+ '<br />Read up if you care, though it isn\'t super important)<br /> via the Privacy Notice section of the README!</div>');
+
+displayUI();
+
+
 function f_comandos(data) {
         API.sendChat('Comandos del chat: ');
         window.setTimeout(function(){API.sendChat('ayuda | reco | seguir | esverdad | chistes | generos | bailar | tomar | cerveza | whisky | tequila | vodka | champagne | ron');}, 500);
