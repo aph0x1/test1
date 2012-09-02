@@ -16,11 +16,7 @@ function displayUI()
 	 */
 	$('#chat').prepend('<div id="plugbot-ui"></div>');
 	$('#plugbot-ui').append(
-			'<p id="plugbot-btn-woot" style="color:#3FFF00">auto-woot</p>'
-		+ 	'<p id="plugbot-btn-queue" style="color:#ED1C24">auto-queue</p>'
-		+ 	'<p id="plugbot-btn-hidevideo" style="color:#ED1C24">hide video</p>'
-		+ 	'<p id="plugbot-btn-userlist" style="color:#3FFF00">userlist</p>'
-		+ 	'<h2 title="This makes it so you can give a user in the room a special colour when they chat!">Custom Username FX: <br /><br id="space" /><span onclick="promptCustomUsername()" style="cursor:pointer">+ add new</span></h2>'
+			'<p id="plugbot-btn-woot" style="color:#3FFF00">El bot esta activado</p>'
 	);
 }
 
