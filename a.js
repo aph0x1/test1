@@ -1,13 +1,13 @@
 function displayUI()
 {
-	$("#plugbot-warning").remove();
-	$('#playback').append('<div id="plugbot-warning" style="background-color:#0a0a0a;opacity:0.91;width:100%;padding:12px 0 12px 0;color:#fff;text-align:center;opacity:0;font-size:15px">'
-		+ 'BomberBOT activado<br />');
+    $("#plugbot-warning").remove();
+    $('#playback').append('<div id="plugbot-warning" style="background-color:#0a0a0a;opacity:0.91;width:100%;padding:12px 0 12px 0;color:#fff;text-align:center;opacity:0;font-size:15px">'
+        + 'BomberBOT activado<br />');
 
 }
 displayUI();
 $(function() {
-	$("#plugbot-warning").animate({"opacity": "0.91"}, {duration: "medium"}).delay(60000).animate({"opacity": "0"}, {duration: "slow"});
+    $("#plugbot-warning").animate({"opacity": "0.91"}, {duration: "medium"}).delay(60000).animate({"opacity": "0"}, {duration: "slow"});
 });
 
 
@@ -206,6 +206,63 @@ function f_champagne(data){
 function f_ron(data){
                         API.sendChat(data.from + ", Se ha tomado un vaso de Ron, Yoho! Yoho! que corra el ron!!!");
 }
+
+
+
+
+(function() {
+  var cervezaCommand
+    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+
+
+
+
+
+  cervezaCommand = (function(_super) {
+
+    __extends(cervezaCommand, _super);
+
+    function cervezaCommand() {
+      return cervezaCommand.__super__.constructor.apply(this, arguments);
+    }
+
+    cervezaCommand.prototype.init = function() {
+      this.command = 'cerveza';
+      this.parseType = 'startsWith';
+      return this.rankPrivelege = 'mod';
+    };
+
+    cervezaCommand.prototype.getCerveza = function() {
+      var cervezas;
+      cervezas = ["rica y deliciosa cerveza"];
+      return cervezas;
+    };
+
+    cervezaCommand.prototype.functionality = function() {
+      var msg, r, user;
+      msg = this.msgData.message;
+      r = new RoomHelper();
+      if (msg.length > 9) {
+        user = r.lookupUser(msg.substr(9));
+        if (user === false) {
+          API.sendChat("/em no ve a  '" + msg.substr(9) + "'en la sala y se la toma el");
+          return false;
+        } else {
+          return API.sendChat("@" + user.username + ", @" + this.msgData.from + " te ha dado una " + this.getCerveza() + ". Disfrutala.");
+        }
+      }
+    };
+
+    return cervezaCommand;
+
+  })(Command);
+
+
+
 
 
 var o_chatcmds = {
